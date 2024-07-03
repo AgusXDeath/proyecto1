@@ -1,28 +1,37 @@
 <mat-toolbar>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+<!-- Menú desplegable para cuando la pantalla sea menor a 700px -->
+  <button id="menuSecciones" mat-icon-button class="example-icon" [matMenuTriggerFor]="seccion">
     <mat-icon>menu</mat-icon>
   </button>
-  <span>App</span>
 
-  <!--Menu despregable-->
-  <button mat-button [matMenuTriggerFor]="menu">productos</button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item>Item 1</button>
-    <button mat-menu-item>Item 2</button>
+  <mat-menu #seccion="matMenu">
+    <button mat-menu-item routerLink="/inicio">Inicio</button>
+    <button mat-menu-item [matMenuTriggerFor]="producto">Productos</button>
   </mat-menu>
 
+  <span><img src="../../../assets/logo proyecto final.jpg" alt=""></span>
+
+ 
+  <button id="menuInicio" mat-button routerLink="/inicio">Inicio</button>
+
+  
+  <button id="menuProducto" mat-button [matMenuTriggerFor]="producto">Productos</button>
+  <mat-menu #producto="matMenu">
+      <button mat-menu-item routerLink="/buzos">buzos</button>
+      <button mat-menu-item routerLink="/pants">pants</button>
+      <button mat-menu-item routerLink="/producto">producto</button>
+      <button mat-menu-item routerLink="/shoes">shoes</button>
+  </mat-menu>
   <span class="example-spacer"></span>
-
-  <!-- inicio de sesion y registro de nuevo usuario -->
-  <button mat-button [matMenuTriggerFor]="usuario"><mat-icon>person</mat-icon></button>
+  
+  <button mat-icon-button [matMenuTriggerFor]="usuario"><mat-icon>person</mat-icon></button>
   <mat-menu #usuario="matMenu">
-    <button mat-menu-item routerLink="/registro">Registrarse</button>
-    <button mat-menu-item routerLink="/inicio-sesion">inicio Sesion</button>
+      <button mat-menu-item routerLink="/registro">Registrarse</button>
+      <button mat-menu-item routerLink="/inicio-sesion">Iniciar Sesión</button>
   </mat-menu>
 
-  <!-- carrito -->
-  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-    <mat-icon>favorite</mat-icon>
-  </button>
 
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>shopping_cart</mat-icon>
+  </button>
 </mat-toolbar>
