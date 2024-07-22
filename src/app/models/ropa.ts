@@ -3,5 +3,6 @@ export interface Ropa {
     marca: string;
     modelo: string;
     corte: string;
-    talle: number;
+    talle: string;
+    imagen: string;
 }

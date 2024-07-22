@@ -5,13 +5,16 @@
         <div *ngFor="let i of info" class="contenido">
           <mat-card class="example-card">
             <mat-card-header>
-              <mat-card-title>{{i.nombre}}</mat-card-title>
-              <mat-card-subtitle>Edad: {{i.edad}} años</mat-card-subtitle>
+              <mat-card-title>{{i.id}}</mat-card-title>
+              <mat-card-subtitle>Marca: {{i.marca}}</mat-card-subtitle>
             </mat-card-header>
-            <img mat-card-image src="{{i.imagen}}" alt="{{i.alt}}">
+            <img mat-card-image src="{{i.imagen}}">
             <mat-card-content>
               <p>
-                Raza: {{i.raza}}
+                modelo: {{i.modelo}}
+              </p>
+              <p>
+                talle: {{i.talle}}
               </p>
             </mat-card-content>
             <mat-card-actions>

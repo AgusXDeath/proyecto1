@@ -4,8 +4,10 @@ import { CommonModule } from '@angular/common';
 import { InicioRoutingModule } from './inicio-routing.module';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { CardComponent } from './components/card/card.component';
-import { InicioComponent } from './components/pages/inicio/inicio.component';
+import { InicioComponent } from './pages/inicio/inicio.component';
 
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,16 @@ import { InicioComponent } from './components/pages/inicio/inicio.component';
   ],
   imports: [
     CommonModule,
-    InicioRoutingModule
+    InicioRoutingModule,
+    MatButtonModule,
+    MatCardModule
+  ],
+  exports: [
+    CardComponent,
+    InicioComponent,
+    MatButtonModule,
+    MatCardModule
   ]
 })
-export class InicioModule { }
+export class InicioModule {
+ }
